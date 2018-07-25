@@ -1,0 +1,77 @@
+﻿@model IEnumerable<IntlOps.Models.AccountViewModel.ApproveAccModel>
+@using IntlOps.Data
+
+<title>User Credit Applications</title>
+<html>
+<body>
+    <div class="container mngacc">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2>Credit Applications</h2>
+                        </div>
+                    </div>
+                </div>
+                <table class="table" id="creditTable">
+                    <thead>
+                        <tr>
+                            <th> Name </th>
+                            <th> Application Status </th>
+                            <th> Application Date </th>
+                            <th> Income </th>
+                            <th> Credit Requested </th>
+                            <th>Approve/Decline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Firstname) @Html.DisplayFor(modelItem => item.Lastname)
+                                </td>                               
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ApplicationStatus)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ApplicationDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Income)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreditRequested)
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a asp-action="ApproveCredit" asp-route-id="@item.Id" class="btn btn-primary">
+                                            <i class="glyphicon glyphicon-check"></i> Approve
+                                        </a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a asp-action="DeclineCredit" asp-route-id="@item.Id" class="btn btn-danger">
+                                            <i class="glyphicon glyphicon-trash"></i> Decline
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+@section Scripts
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#creditTable').DataTable();
+        });
+    </script>
+}
+

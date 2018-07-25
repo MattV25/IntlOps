@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrapvalidator/dist/css/bootstrapValidator.min.css" />
+    <link rel="stylesheet" href="~/css/Layout.css" />
+    <link rel="stylesheet" href="~/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="~/css/jquery-ui.theme.min.css" />
+    <link rel="stylesheet" href="~/css/jquery.steps.css" />
+    <link rel="stylesheet" href="~/lib/DataTables/media/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/animate.css/animate.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/favicon.ico" />
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="~/lib/DataTables/media/js/jquery.dataTables.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/js/jquery.steps.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+    <script src="~/lib/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
+
+    <script src="~/js/fieldval.js"></script>
+    <script src="~/js/maskedinput.js"></script>
+    <script src="~/js/jquery-ui.min.js"></script> 
+
+</head>
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Login" class="navbar-brand">IntlOps</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><i class="fanav fa fa-home fa-lg fa-li"></i></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Login">Home</a></li>
+                <li><i class="fanav fa fa-info fa-lg fa-li"></i></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                <li><i class="fanav fa fa-phone fa-lg fa-li"></i></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+            </ul>
+            @await Html.PartialAsync("_LoginPartial")
+        </div>
+    </div>
+</nav>
+<html>
+<body>
+    @RenderBody()
+</body>
+</html>
+<footer class="footer">
+    <div class="divider1">
+        <div class="divider2"></div>
+    </div>
+    <div class="container">
+        <p>&copy; @DateTime.Now.Year</p>
+    </div>
+</footer>
+@RenderSection("scripts", required: false)

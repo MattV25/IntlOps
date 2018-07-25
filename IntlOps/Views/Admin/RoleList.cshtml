@@ -1,0 +1,88 @@
+﻿@model IEnumerable<IntlOps.Data.ApplicationRole>
+
+<title>Role List</title>
+
+<div class="container mngacc">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Application Roles</h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="btn-group">
+                            <a data-toggle="modal" asp-action="CreateRole"
+                               data-target="#createRoleModal" class="btn btn-primary createRoleBtn">
+                                <i class="glyphicon glyphicon-plus"></i> Create Role
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="table" id="roleList">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a data-toggle="modal" asp-action="EditRole" asp-route-id="@item.Id"
+                                       data-target="#editRoleModal" class="btn btn-primary editRoleBtn">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </a>
+                                </div>
+                                <div class="btn-group">
+                                    <a data-toggle="modal" asp-action="DeleteRole" asp-route-id="@item.Id"
+                                       data-target="#deleteRoleModal" class="btn btn-danger deleteRoleBtn">
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--Create Role Modal-->
+<div role="dialog" tabindex="-1" id="createRoleModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<!--Edit Role Modal-->
+<div role="dialog" tabindex="-1" id="editRoleModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<!--Delete Role Modal-->
+<div role="dialog" tabindex="-1" id="deleteRoleModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/modal.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#roleList').DataTable();
+        });
+    </script>
+}
+}

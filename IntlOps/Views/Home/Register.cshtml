@@ -1,0 +1,224 @@
+﻿@model AccountViewModel.RegisterViewModel
+
+<title>Registration</title>
+<head>
+</head>
+<html>
+<body class="site">
+    <div class="homesetup">
+        <div class="loginside">
+            <div class="regsetup">
+                <div class="registerForm">
+                    <form asp-route-returnurl="@ViewData["ReturnUrl"]" class="form-horizontal" id="regform" method="post">
+                        <h2>Registration Form</h2>
+                        @*--------------------------------------Nav Arrow Section-----------------------------------------*@
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="navbar navtab">
+                                    <div class="navbar-inner">
+                                        <div class="container bcformat">
+                                            <ul class="arrows">
+                                                <li class="step"><a href="#personal" data-toggle="tab">Personal</a></li>
+                                                <li class="step"><a href="#account" data-toggle="tab">Account</a></li>
+                                                <li class="step"><a href="#employment" data-toggle="tab">Employment</a></li>
+                                                <li class="step"><a href="#address" data-toggle="tab">Address</a></li>
+                                            </ul>                                       
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*--------------------------------------First Section---------------------------------------------*@
+                        <div class="tab" id="personal">
+                            @*
+                            <div class="form-group has-feedback has-success has-error">
+                                <div class="row">
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only control-label">First Name</label>
+                                        <span class="fa fa-user-circle"></span>
+                                        <input asp-for="Firstname" class="form-control " placeholder="First Name" name="Firstname" onclick="this.select()" />
+                                    </div>
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">Last Name</label>
+                                        <span class="fa fa-user-circle"></span>
+                                        <input asp-for="Lastname" class="form-control " placeholder="Last Name" name="Lastname" onclick="this.select()" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback has-success has-error">
+                                <div class="row">
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">Date of Birth</label>
+                                        <span class="fa fa-calendar"></span>
+                                        <input asp-for="Birthdate" class="birthdate form-control" placeholder="Date of Birth" name="Birthdate" />
+                                    </div>
+                                </div>
+                            </div>
+                            *@
+                            <div class="form-group has-feedback has-success has-error">
+                                <div class="row">
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">Gender</label>
+                                        <span class="fa fa-intersex"></span>
+                                        @Html.DropDownListFor(m => m.Gender, new List<SelectListItem>
+                                          {
+                                                new SelectListItem{ Text="Male", Value="Male"},
+                                                new SelectListItem{ Text="Female", Value="Female"}
+                                           }, "-- Gender --", new { @class = "form-control indent", @name = "Gender", @id="genderSelect", required="required" })
+                                    </div>
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">Marital Status</label>
+                                        <span class="fa fa-heart"></span>
+                                        @Html.DropDownListFor(m => m.MaritalStatus, new List<SelectListItem>
+                                          {
+                                                new SelectListItem{ Text="Single", Value="Single"},
+                                                new SelectListItem{ Text="Married", Value="Married"}
+                                           }, "-- Marital Status --", new { @class = "form-control indent", @name = "MaritalStatus" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*--------------------------------------Second Section---------------------------------------------*@
+                        <div class="tab" id="account">
+                            <div class="form-group has-feedback has-success has-error">
+                                <div class="row">
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">User Name</label>
+                                        <span class="fa fa-user-circle"></span>
+                                        <input asp-for="UserName" class="form-control " placeholder="Username" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback has-success has-error">
+                                <div class="row">
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">Password</label>
+                                        <span class="fa fa-lock"></span>
+                                        <input asp-for="Password" class="form-control " placeholder="Password" />
+                                    </div>
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">Confirm Password</label>
+                                        <span class="fa fa-lock"></span>
+                                        <input asp-for="ConfirmPassword" class="form-control " placeholder="Confirm Password" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback has-success has-error">
+                                <div class="row">
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">Email</label>
+                                        <span class="fa fa-envelope"></span>
+                                        <input asp-for="Email" class="form-control " placeholder="Email" />
+                                    </div>
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">Phone Number</label>
+                                        <span class="fa fa-mobile-phone"></span>
+                                        <input asp-for="PhoneNumber" class="form-control " placeholder="Phone number" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*--------------------------------------Third Section---------------------------------------------*@
+                        <div class="tab" id="employment">
+                            <div class="form-group has-feedback has-success has-error">
+                                <div class="row">
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">Company Name</label>
+                                        <span class="fa fa-briefcase"></span>
+                                        <input asp-for="AccountName" class="form-control " placeholder="Company Name" />
+                                    </div>
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">Job Title</label>
+                                        <span class="fa fa-briefcase"></span>
+                                        <input asp-for="JobTitle" class="form-control " placeholder="Job Title" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback has-success has-error">
+                                <div class="row">
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">Job Type</label>
+                                        <span class="fa fa-briefcase"></span>
+                                        @Html.DropDownListFor(m => m.JobType, new List<SelectListItem>
+                                          {
+                                                new SelectListItem{ Text="Full-time", Value="Full-time"},
+                                                new SelectListItem{ Text="Part-time", Value="Part-time"},
+                                                new SelectListItem{ Text="Temporary", Value="Temporary"}
+                                           }, "-- Select Job Type --", new { @class = "form-control indent" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*--------------------------------------Fourth Section---------------------------------------------*@
+                        <div class="tab" id="address">
+                            <div class="form-group has-feedback has-success has-error">
+                                <div class="row">
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">Street Line 1</label>
+                                        <span class="fa fa-road"></span>
+                                        <input asp-for="Street1" class="form-control " placeholder="Street Line 1" />
+                                    </div>
+                                    <div class="col-md-6 formicon">
+                                        <label class="sr-only">Street Line 2</label>
+                                        <span class="fa fa-road"></span>
+                                        <input asp-for="Street2" class="form-control " placeholder="Street Line 2" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback has-success has-error">
+                                <div class="row">
+                                    <div class="col-md-5 formicon">
+                                        <label class="sr-only">City</label>
+                                        <span class="fa fa-building"></span>
+                                        <input asp-for="City" class="form-control" placeholder="City" />
+                                    </div>
+                                    <div class="col-md-4 formicon">
+                                        <label class="sr-only">State</label>
+                                        <select asp-for="State" asp-items="IntlOps.Controllers.HomeController.GetStates()" style="color:black" class="form-control"></select>
+                                    </div>
+                                    <div class="col-md-3 formicon">
+                                        <label class="sr-only">Zipcode</label>
+                                        <input asp-for="Zipcode" class="form-control" placeholder="Zipcode" style="text-indent:0" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*--------------------------------------Reset/Nav Buttons---------------------------------------------*@
+                        <ul class="pager wizard">
+                            <li class="previous first" style="display:none;"><a href="#">First</a></li>
+                            <li class="previous"><a id="prevBtn" onclick="nextPrev(-1)" href="#">Previous</a></li>
+                            <li class="next last" style="display:none;"><a href="#">Last</a></li>
+                            <li class="next"><a id="nextBtn" onclick="nextPrev(1)" href="#">Next</a></li>
+                        </ul>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-default" value="Register" id="regbutton" />
+                            <input type="reset" class="btn btn-danger" value="Reset" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="infoside">
+            <div class="row inforow1">
+
+            </div>
+            <div class="row inforow2">
+                <div class="infobox">
+                    <div class="circle"></div>
+                </div>
+                <div class="infobox">
+                    <div class="circle"></div>
+                </div>
+                <div class="infobox">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/Register.js"></script>
+</body>
+</html>
+@section Scripts
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -1,0 +1,182 @@
+﻿/*---------------------------------------------Core/Body Section----------------------------------------*/
+
+body, html { height: 100%; min-height: 100%; font-family: FontAwesome; text-align: center; background: url("/images/benjamin-child-17946-unsplash.jpg") no-repeat center center fixed; background-size: cover; }
+hr{ margin-top:5px; margin-bottom:10px; }
+
+/*-------------------------------------------End Core/Body Section--------------------------------------*/
+
+/*--------------------------------------------Top Nav Section-------------------------------------------*/
+
+i.fanav.fa { color: white; top: 18px; padding-left: 30px; }
+.nav > li > a { padding: 15px 20px; }
+a.navbar-brand { padding-right: 50px; color: white; }
+nav.navbar.navbar-inverse.navbar-top { border: none; }
+.navbar-inverse .navbar-nav > li > a { color: white; }
+.navbar-inverse .navbar-brand { color: white; }
+.navbar-inverse .btn-link { color: white; }
+
+/*------------------------------------------End Top Nav Section------------------------------------------*/
+
+/*--------------------------------------------Footer Section---------------------------------------------*/
+
+footer { background-color: black; bottom: 0; left: 0; width: 100%; color: white; }
+.divider1 { width: 100%; background-color: black; bottom: 0; overflow: hidden; }
+.divider2 { overflow: hidden; height: 35px; }
+.divider2:after { content: ''; display: block; margin: -35px auto 0; width: 100%; height: 35px; border-radius: 125px / 30px; box-shadow: 0 0 60px gray; overflow:hidden; }
+
+/*------------------------------------------End Footer Section-------------------------------------------*/
+
+/*--------------------------------------------Panel Section----------------------------------------------*/
+
+div.mngacc{ padding-top: 50px; }
+div.panel-body{ padding-left: 25px !important; padding-right: 25px !important; padding-bottom: 0 !important; text-align: left; background-color: lightgray; box-shadow: 2px 2px 2px #888888; }
+.nav-tabs > li > a { box-shadow: 2px 2px 2px #888888; padding-left: -20px; }
+div.tab-content{ padding-top: 20px; border-top: 2px solid black; }
+
+/*------------------------------------------End Panel Section--------------------------------------------*/
+
+/*----------------------------------------Side Navigation Section----------------------------------------*/
+
+.glyphicon-ring { width: 40px; height: 40px; border-radius: 50%; border: 4px solid white; color: white; display: inline-table; text-align: center; float:left; }
+.glyphicon-ring .glyphicon-bordered { font-size: 10px; vertical-align: middle; display: table-cell; }
+.formatring { 
+    display: inline-block; color: white; background-color: black; opacity: 0.7; height: 7%; width: 50%;
+    margin-bottom: 15px; margin-left: 5px; box-shadow: 10px 10px 10px black; float: left; display: flex; flex-direction: column; justify-content: center; }
+a.sidename { color:white; font-size:18px; }
+
+/*-------------------------------------End Side Navigation Section----------------------------------------*/
+
+/*-----------------------------------------Start Modal Section--------------------------------------------*/
+
+.modal-body { padding-left:50px; padding-right:50px; }
+
+/*------------------------------------------End Modal Section---------------------------------------------*/
+
+/*----------------------------------------Start Home Page Info Side---------------------------------------*/
+
+.infoside { height: 100%; width: 50%; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
+.infobox { height: 250px; width: 220px; border: 2px solid white; margin-left: 10px; margin-right: 10px; display: inline-block; position: relative; }
+.inforow1 { height:40%; width:90%; border: 2px solid black; }
+.circle { position: absolute; height: 100px; width: 100px; border-radius: 50px; border: 3px solid white; left: 40%; margin-left: -25px; top: -40px; background-color: white; }
+
+/*------------------------------------------End Home Page Info Side---------------------------------------*/
+
+/*----------------------------------------Start Home Page Login Side--------------------------------------*/
+
+.loginside { height: 100%; width: 50%; }
+.loginform { height: 60%; width: 50%; border-radius: 15px; margin-top: 50px; margin-left: 50px; background: lightgray; }
+.logininput { width:100%; }
+.checkbox label { padding-left:0px; }
+.hr-text { line-height: 1em; position: relative; outline: 0; border: 0; color: red; text-align: center; height: 1.5em; opacity: .5; }
+    .hr-text:before { content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 2px; background: linear-gradient(to right, transparent, black, transparent); }
+    .hr-text:after { content: attr(data-content); position: relative; display: inline-block; color: black; padding: 0 .5em; line-height: 1.5em; background-color: lightgray; }
+div.input.form-group.has-feedback { margin: 0 auto; }
+.input { width: 80%; padding-bottom: 10px; display: block; margin: 0 auto; }
+.outericon { position: relative; text-align: center; }
+.innericon { position: relative; margin: auto; }
+.miscitems { display: flex; }
+.title{ font-size: 32px; padding-top: 15px; }
+.logbutton { padding-bottom: 25px; }
+.mediaoptions { display: flex; align-items: center; justify-content: center; }
+.mediabutton { font-size: 25px; color: #fff; display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; border-radius: 50%; margin: 5px; border:2px solid white; }
+.homesetup { min-height: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
+.regmember { height: 5%; width: 100%; justify-content: center; padding-top: 10px; font-size: 15px; }
+
+/*--------------------------------------------End Home Page Login Side---------------------------------------*/
+
+/*--------------------------------------------------Register Page--------------------------------------------*/
+
+.regsetup { height: 100%; padding-top: 50px; padding-bottom: 65px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
+.registerForm { height: 80%; width: 70%; background: lightgray; border-radius: 5%; border: 10px solid #535050; }
+#regform { width: 100%; padding-left: 20px; padding-right: 20px;}
+.regborder { height: 85%; width: 90%; background-color: white; margin: auto; border-radius: 5%; padding-top: -20%; }
+.bcformat { margin: 0 auto; display: table; }
+.tab { display: none; }
+.progress { margin: auto; width: 96%; border-radius: 10px; border: 0; } 
+.btnrow { position: relative; }
+div.navbar-inner { width: 100%; }
+select.indent { text-indent: 40px; }
+.formicon { position: relative; }
+    .formicon input { background: #fcfcfc; border: 1px solid #aaa; border-radius: 5px; box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset; }
+    .formicon input { text-indent: 32px; }
+    .formicon .fa { position: absolute; top: 10px; left: 25px; }
+
+/*--------------------------------------------------End Register Page-----------------------------------------*/
+
+/*-------------------------------------------Start Credit Application Section---------------------------------*/
+
+.acchome { height: 100%; width: 85%; }
+.sidedisplay { width: 90%; height: 100%; padding-top: 20px; }
+.wrapper { min-height: 100%; height: 100%; display: flex; }
+.accapply { width: 50%; height: 50%; border-radius: 15px; background-color: azure; margin: auto; }
+div.input.form-group { margin: auto; }
+
+/*-------------------------------------------End Credit Application Section-----------------------------------*/
+
+.entrycount { float: left; }
+.pagenav { float: right; }
+.table-title { padding-bottom: 15px; background: #435d7d; color: #fff; padding: 16px 30px; margin: -15px -25px 10px; border-radius: 3px 3px 0 0; }
+    .table-title h2 { margin: 5px 0 0; font-size: 24px; }
+    .table-title .btn-group { float: right; }
+
+/*-----------------------------------------------Manage Account Info Section-----------------------------------*/
+
+.formbtn { position: relative; margin: -50px 0 0 -10px; border: none; background-color: lightgray; }
+.navside { height: 100%; width: 15%; }
+.contentside { height: 100%; width: 85%; padding-bottom: 25px; padding-top: 25px; }
+.formsize { height: 100%; width: 90%; overflow-y: scroll; margin: auto; }
+.infolabel { text-align: right; }
+
+/*--------------------------------------------End Manage Account Info Section----------------------------------*/
+
+/*------------------------------------------Register Breadcrumb Arrow Navigation-------------------------------*/
+
+/*--Main Element--*/
+.arrows { padding: 0; overflow: hidden; }
+.arrows li { 
+    float: left; margin-left: 0; width: 125px; height: 40px; list-style-type: none;
+    padding: 5px 5px 5px 30px; position: relative; background-color: #ddd; border-right: 4px solid white;
+    text-decoration: none; color: #444; text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+.arrows li.active { opacity: 1 !important; background-color: #4CAF50 !important; }
+.arrows li.finish { background-color: #66ff66; }
+/*--End Main Element--*/
+
+/*----Before(left arrow)*/
+.arrows li::before { 
+    position: absolute; top: 0; left: 0; display: block;
+    border-left: 15px solid white; border-top: 20px solid transparent; border-bottom: 20px solid transparent;
+    width: 0; height: 0; content: " ";
+}
+.arrows li:first-child:before { display: none; }
+/*----End Before-------*/
+
+/*----After(right arrow)*/
+.arrows li:last-child:after { display: none; }
+.arrows li:hover::after { border-left-color: #fff; }
+.arrows li.active::after { border-left-color: #4CAF50 !important; }
+.arrows li::after { 
+    z-index: 1; position: absolute; top: 50%; margin-top: -1.5em; right: -1em; display: block;
+    border-left: 1em solid; border-left-color: #ddd; border-top: 1.5em solid transparent; border-bottom: 1.5em solid transparent;
+    width: 0; height: 0; content: " ";
+}
+li.step.finish::after { border-left-color: #66ff66; }
+/*-----End After-------*/
+
+/*----Child-----*/
+.arrows li:first-child { padding-left: 1em; border-radius: 5px 0 0 5px; }
+.arrows li:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-right: none; }
+/*--End Child--*/
+
+/*--Hover Effect--*/
+.arrows li:hover { background: #fff; }
+/*--End Hover Effect*/
+
+/*--Current Selected Element--*/
+.arrows .current, .arrows .current:hover { font-weight: bold; background: none; }
+.arrows .current::after, .arrows .current::before { content: normal; }
+/*--End Current Selected Element--*/
+
+/*------------------------------------------End Register Breadcrumb Arrow Navigation--------------------------------------*/
+
+span.glyphicon.form-control-feedback.glyphicon-ok::before{ color: green; }

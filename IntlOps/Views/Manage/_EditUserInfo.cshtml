@@ -1,0 +1,127 @@
+﻿@model IntlOps.Data.ApplicationUser
+
+
+@using (Html.BeginForm("EditUserInfo", "Manage", FormMethod.Post))
+            {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-horizontal">
+        <hr />
+
+        <h4>
+            Contact Information
+        </h4>
+        <div>
+            <hr />
+            <input onclick="names()" type="button" class="formbtn" value="&#9650;" data-toggle="collapse" data-target="#namecollapse" id="btnname">
+        </div>
+        <br />
+
+        <div class="collapse.show" id="namecollapse">
+            <div class="form-group">
+                <label asp-for="Firstname" class="control-label col-md-2">First Name</label>
+                <div class="col-md-10">
+                    <input asp-for="Firstname" class="form-control" placeholder="First Name" />
+                    @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lastname" class="control-label col-md-2">Last Name</label>
+                <div class="col-md-10">
+                    <input asp-for="Lastname" class="form-control" placeholder="Last Name" />
+                    @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label col-md-2">Phone Number</label>
+                <div class="col-md-10">
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number" />
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountName" class="control-label col-md-2">Company Name</label>
+                <div class="col-md-10">
+                    <input asp-for="AccountName" class="form-control" placeholder="Company Name" />
+                    @Html.ValidationMessageFor(model => model.AccountName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <h4>
+            Address
+        </h4>
+        <div>
+            <hr />
+            <input onclick="address()" type="button" class="formbtn" value="&#9650;" data-toggle="collapse" data-target="#addresscollapse" id="btnaddress">
+        </div>
+        <br />
+
+        <div class="collapse.show" id="addresscollapse">
+            <div class="form-group">
+                <label asp-for="Street1" class="control-label col-md-2">Street Line 1</label>
+                <div class="col-md-10">
+                    <input asp-for="Street1" class="form-control" placeholder="Street Line 1" />
+                    @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Street2" class="control-label col-md-2">Street Line 2</label>
+                <div class="col-md-10">
+                    <input asp-for="Street2" class="form-control" placeholder="Street Line 2" />
+                    @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label col-md-2">City</label>
+                <div class="col-md-10">
+                    <input asp-for="City" class="form-control" placeholder="City" />
+                    @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label col-md-2">State</label>
+                <div class="col-md-10">
+                    <select asp-for="State" asp-items="IntlOps.Controllers.HomeController.GetStates()" style="color:black"></select>
+                    @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zipcode" class="control-label col-md-2">Zipcode</label>
+                <div class="col-md-10">
+                    <input asp-for="Zipcode" class="form-control" placeholder="Zipcode" />
+                    @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts
+{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<script>
+    function names() {
+        var name = document.getElementById("btnname");
+        $('#namecollapse').on('shown.bs.collapse', function () {
+            name.value = "\u25B2";
+        })
+        $('#namecollapse').on('hidden.bs.collapse', function () {
+            name.value = "\u25BC";
+        })
+    }
+    function address() {
+        var address = document.getElementById("btnaddress");
+        $('#addresscollapse').on('shown.bs.collapse', function () {
+            address.value = "\u25B2";
+        })
+        $('#addresscollapse').on('hidden.bs.collapse', function () {
+            address.value = "\u25BC";
+        })
+    }
+</script>
+
+
+
+

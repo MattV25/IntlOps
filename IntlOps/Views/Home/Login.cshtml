@@ -1,0 +1,122 @@
+﻿@using IntlOps.Data
+@model AccountViewModel.LoginViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+
+<title>Home</title>
+<html>
+<head>
+    <style>
+        .fa-user {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            color: orange;
+        }
+        .fa-lock {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            color: orange;
+        }
+        input.form-control {
+            text-indent: 2em;
+            padding: 0.2em 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="site">
+    <div class="homesetup" id="homesetup">
+        <!--Login Side-->
+        <div class="loginside">
+            <div class="loginform" id="loginform">
+                <div class="logininput">
+                    <form asp-route-returnurl="@ViewData["ReturnUrl"]" class="form-horizontal" id="loginform" method="post">
+                        <div class="title">Login</div>
+                        <hr />
+                        <div class="input form-group outericon">
+                            <div class="innericon">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input asp-for="Email" class="form-control" placeholder="Email" onclick="this.select()" />
+                            </div>
+                        </div>
+                        <div class="input form-group outericon">
+                            <div class="innericon">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                                <input asp-for="Password" class="form-control" placeholder="Password" onclick="this.select()" />
+                            </div>
+                        </div>
+                        <div class="miscitems">
+                            <div class="input form-group">
+                                <input type="checkbox" onclick="showPass()"> Show Password
+                            </div>
+                            <div class="input form-group">
+                                <input type="checkbox" asp-for="RememberMe"> Remember Me?
+                            </div>
+                        </div>
+                        <div class="input form-group" style="display:flex">
+                            <a asp-action="ForgotPassword">Forgot your password?</a>
+                        </div>
+                        <div class="logbutton">
+                            <input type="submit" class="btn btn-default" value="Login" />
+                            <input type="reset" class="btn btn-danger" value="Reset" />
+                        </div>
+                    </form>
+                    <hr class="hr-text" data-content="OR">
+                    <div class="mediaoptions">
+                        <a href="#" class="mediabutton" style="background-color:#3b5998">
+                            <i class="fa fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="mediabutton" style="background-color:#1da1f2">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="mediabutton" style="background-color:#ea4335">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                    <div class="regmember" style="display:flex">
+                        <div>Don't have an account?</div>&nbsp;
+                        <div><a asp-action="Register">Register Here</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Info Side-->
+        <div class="infoside">
+            <div class="row inforow1">
+
+            </div>
+            <div class="row inforow2">
+                <div class="infobox">
+                    <div class="circle"></div>
+                </div>
+                <div class="infobox">
+                    <div class="circle"></div>
+                </div>
+                <div class="infobox">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+@section Scripts 
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+    <script src="~/js/fieldval.js" asp-append-version="true"></script>
+}
+<script>
+    function showPass() {
+        var x = document.getElementById("Password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>

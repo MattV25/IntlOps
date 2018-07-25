@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Edit Customer Information";
+}
+
+<div class="contentside">
+        <div class="formsize">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Edit Customer Information</h2>
+                    </div>
+                </div>
+
+                <div id="EditCustomerPartial">
+                    @Html.Partial("_EditUserInfo")
+                </div>
+                <div id="EditCustomerPartial">
+                    @Html.Partial("ChangePassword")
+                </div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,89 @@
+﻿@model IntlOps.Data.ApplicationUser
+
+<title>Account Details</title>
+
+<html>
+<body>
+    <div class="container mngacc">
+        <div class="form-horizontal userinfo">
+            <div class="form-group">
+                <label class="control-label col-md-2 infolabel">Username</label>
+                <span class="myClass col-md-6">
+                    @Html.DisplayFor(model => model.UserName)
+                </span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label col-md-2 infolabel">Email</label>
+                <span class="myClass col-md-6">
+                    @Html.DisplayFor(model => model.Email)
+                </span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label col-md-2 infolabel">Phone Number</label>
+                <span class="myClass col-md-6">
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label col-md-2 infolabel">First Name</label>
+                <span class="myClass col-md-6">
+                    @Html.DisplayFor(model => model.Firstname)
+                </span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label col-md-2 infolabel">Last Name</label>
+                <span class="myClass col-md-6">
+                    @Html.DisplayFor(model => model.Lastname)
+                </span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label col-md-2 infolabel">Company Name</label>
+                <span class="myClass col-md-6">
+                    @Html.DisplayFor(model => model.AccountName)
+                </span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label col-md-2 infolabel">Street Line 1</label>
+                <span class="myClass col-md-6">
+                    @Html.DisplayFor(model => model.Street1)
+                </span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label col-md-2 infolabel">Street Line 2</label>
+                <span class="myClass col-md-6">
+                    @Html.DisplayFor(model => model.Street2)
+                </span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label col-md-2 infolabel">City</label>
+                <span class="myClass col-md-6">
+                    @Html.DisplayFor(model => model.City)
+                </span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label col-md-2 infolabel">State</label>
+                <span class="myClass col-md-6">
+                    @Html.DisplayFor(model => model.State)
+                </span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label class="control-label col-md-2 infolabel">Zipcode</label>
+                <span class="myClass col-md-6">
+                    @Html.DisplayFor(model => model.Zipcode)
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+@section Scripts {@await Html.PartialAsync("_ValidationScriptsPartial")}

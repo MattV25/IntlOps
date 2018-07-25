@@ -1,0 +1,30 @@
+﻿@model AccountViewModel.ApplicationsViewModel
+<html>
+<body>
+    <div class="container mngacc">
+        <div class="accapply">
+            <div class="logininput">
+                <form asp-route-returnurl="@ViewData["ReturnUrl"]" class="form-horizontal" id="loginform" method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="title">Credit Application</div>
+                    <hr />
+                    <div class="input form-group">
+                        <input asp-for="ApplicationDate" class="form-control" placeholder="Email" />
+                    </div>
+                    <div class="input form-group">
+                        <input asp-for="Income" class="form-control" placeholder="Password" />
+                    </div>
+                    <div class="input form-group">
+                        <input asp-for="CreditRequested" class="form-control" placeholder="Password" />
+                    </div>
+                    <div class="logbutton">
+                        <input type="submit" class="btn btn-default" value="Apply" />
+                        <input type="reset" class="btn btn-danger" value="Reset" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+@section Scripts {@await Html.PartialAsync("_ValidationScriptsPartial")}

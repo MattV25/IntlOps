@@ -1,0 +1,90 @@
+﻿@model IntlOps.Data.ApplicationUser
+
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">Edit User</h4>
+</div>
+<div class="modal-body form-horizontal">
+    <form asp-action="Edit" role="form">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label asp-for="Firstname"></label>
+                            <input asp-for="Firstname" class="form-control" placeholder="First Name" />
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Lastname"></label>
+                            <input asp-for="Lastname" class="form-control" placeholder="Last Name" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label asp-for="UserName"></label>
+                            <input asp-for="UserName" class="form-control" placeholder="Username" />
+                        </div>
+                        <div class="col-sm-6">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" class="form-control" placeholder="Email" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label asp-for="PhoneNumber"></label>
+                            <input asp-for="PhoneNumber" class="form-control" placeholder="Phone number" />
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label asp-for="AccountName"></label>
+                            <input asp-for="AccountName" class="form-control" placeholder="Company Name" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label asp-for="Street1"></label>
+                            <input asp-for="Street1" class="form-control" placeholder="Street Line 1" />
+                        </div>
+                        <div class="col-sm-6">
+                            <label asp-for="Street2"></label>
+                            <input asp-for="Street2" class="form-control" placeholder="Street Line 2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <label asp-for="City"></label>
+                            <input asp-for="City" class="form-control" placeholder="City" />
+                        </div>
+                        <div class="col-sm-4">
+                            <label asp-for="State"></label>
+                            <select asp-for="State" asp-items="IntlOps.Controllers.HomeController.GetStates()" style="color:black"></select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label asp-for="Zipcode"></label>
+                            <input asp-for="Zipcode" class="form-control" placeholder="Zipcode" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button data-dismiss="modal" id="btn-cancel" class="btn btn-default" type="button">Cancel</button>
+    <button class="btn btn-success" id="btn-submit" type="submit">Submit</button>
+</div>
+
+
+@section Scripts
+{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

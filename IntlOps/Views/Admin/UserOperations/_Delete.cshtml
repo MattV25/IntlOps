@@ -1,0 +1,23 @@
+﻿@model IntlOps.Data.ApplicationUser
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">Delete User</h4>
+</div>
+<div class="modal-body form-horizontal">
+    <form asp-action="Delete" role="form">
+        <input type="hidden" asp-for="Id" />
+        Are you sure you want to delete @Model.Firstname  @Model.Lastname?
+    </form>
+</div>
+<div class="modal-footer">
+    <button data-dismiss="modal" id="btn-cancel" class="btn btn-default" type="button">Cancel</button>
+    <button class="btn btn-success" id="btn-submit" type="submit">Submit</button>
+</div>
+  
+
+@section Scripts  
+{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

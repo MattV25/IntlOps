@@ -1,0 +1,112 @@
+﻿@model PaginatedList<IntlOps.Data.ApplicationUser>
+@using IntlOps.Code
+@using IntlOps.Models
+
+<title>Application User List</title>
+<body>
+    <div class="container mngacc">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2>Manage Applicants</h2>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="btn-group">
+                                <a data-toggle="modal" asp-action="Create"
+                                   data-target="#createModal" class="btn btn-primary createBtn">
+                                    <i class="glyphicon glyphicon-plus"></i> Add User
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table" id="index">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Phone Number</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Firstname) @Html.DisplayFor(modelItem => item.Lastname)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Street1) &nbsp; 
+                                    @Html.DisplayFor(modelItem => item.City),
+                                    @Html.DisplayFor(modelItem => item.State)  &nbsp;
+                                    @Html.DisplayFor(modelItem => item.Zipcode)
+                                </td>
+                                @{ string phoneNumber = FormatPhoneNum.FormatPhoneNumber(item.PhoneNumber, ""); }
+                                <td>@Html.DisplayFor(modelItem => phoneNumber)</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a data-toggle="modal" asp-action="Edit" asp-route-id="@item.Id"
+                                           data-target="#editModal" class="btn btn-primary editBtn">
+                                            <i class="glyphicon glyphicon-pencil"></i>  
+                                        </a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a data-toggle="modal" asp-action="Details" asp-route-id="@item.Id"
+                                           data-target="#detailsModal" class="btn btn-success detailsBtn">
+                                            <i class="glyphicon glyphicon-eye-open"></i>  
+                                        </a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a data-toggle="modal" asp-action="Delete" asp-route-id="@item.Id"
+                                           data-target="#deleteModal" class="btn btn-danger deleteBtn">
+                                            <i class="glyphicon glyphicon-trash"></i> 
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<!--Details Modal-->
+<div role="dialog" tabindex="-1" id="detailsModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<!--Create Modal-->
+<div role="dialog" tabindex="-1" id="createModal" class="modal">
+    <div class="modal-dialog">
+        <form asp-action="Create" id="regform" class="modal-content"></form>
+    </div>
+</div>
+<!--Edit Modal-->
+<div role="dialog" tabindex="-1" id="editModal" class="modal">
+    <div class="modal-dialog">
+        <form asp-action="Edit" class="modal-content"></form>
+    </div>
+</div>
+<!--Delete Modal-->
+<div role="dialog" tabindex="-1" id="deleteModal" class="modal">
+    <div class="modal-dialog">
+        <form asp-action="Delete" class="modal-content"></form>
+    </div>
+</div>
+@section scripts
+{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/modal.js" asp-append-version="true"></script>
+    <script src="~/js/user-index.js" asp-append-version="true"></script>
+    <script src="~/js/fieldval.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#index').DataTable();
+        });
+    </script>
+}

@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<html>
+<body class="site">
+    <div class="homesetup">
+        <div class="navside">
+            <div class="sidedisplay">
+                <div class="formatring">
+                    <a class="sidename" href="~/Account/AccountHomePage">Account Home</a>
+                </div>
+                <div class="formatring">
+                    <a class="sidename" href="~/Manage/AccountSettings">Manage Account</a>
+                </div>
+                <div class="formatring">
+                    <a class="sidename" href="~/Account/ViewAccountInfo">View Account</a>
+                </div>
+                <div class="formatring">
+                    <a class="sidename" href="~/Account/CreditApply">Apply for Credit</a>
+                </div>
+                <div class="formatring">
+                    <a class="sidename" href="~/Manage/Test">Test</a>
+                </div>
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+</body>
+</html>
+@section Scripts 
+{
+    @RenderSection("Scripts", required: false)
+}
+

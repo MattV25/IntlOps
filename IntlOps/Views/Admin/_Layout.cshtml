@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper">
+    <div class="sidedisplay">
+        <div class="formatring">
+            <a class="sidename" href="~/Admin/AdminHome">Admin Home</a>
+        </div>
+        <div class="formatring">
+            <a class="sidename" href="~/Manage/ManageAccountInfo">Manage Account</a>
+        </div>
+        <div class="formatring">
+            <a class="sidename" href="~/Account/ViewAccountInfo">View Account</a>
+        </div>
+        <div class="formatring">
+            <a class="sidename" href="~/Admin/DisplayCreditAcc">Credit Applications</a>
+        </div>
+        <div class="formatring">
+            <a class="sidename" href="~/Admin/Index">View All Accounts</a>
+        </div>
+        <div class="formatring">
+            <a class="sidename" href="~/Admin/RoleControl">Role Management</a>
+        </div>
+        <div class="formatring">
+            <a class="sidename" href="~/Admin/RoleList">Role List</a>
+        </div>
+    </div>
+    <div class="acchome">
+        @RenderBody()
+    </div>
+</div>
+@section Scripts {@RenderSection("Scripts", required: false)}
+
+
+
+
+
+
+
